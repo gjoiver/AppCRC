@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <title>Calculadora de CRC</title>
+      </head>
+      
+      <body>
+
+        <header>
+          <img class="header__image" src="unicor-acreditada5.png">
+        </header>
+        <div id="app">
+          <div class="input_datas">
+          <div class="input__datas--container">
+            <h1>Calculadora CRC</h1>
+            <h2>Ingrese los datos</h2>
+            <div class="input__container--form">
+              <input v-model="data" class="input" type="text" placeholder="Mensaje"></input>
+              <input v-model="poli" class="input" type="text" placeholder="Generador"></input>
+              <button v-on:click="Main" class="button">Calcular CRC</button>
+            </div>
+            
+<textarea class="textarea" readonly>     
+Mensaje + generador: {{datosSum}}
+
+CRC: {{datosCRC}}
+
+Trama: {{tramaObtenida}}
+
+</textarea>
+            
+          </div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+        <script src="app.js"></script>
+      </body>
+      <footer>
+        Developed by: Joiver González & Cesar Rodriguez
+      </footer>
+</html>
