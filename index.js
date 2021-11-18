@@ -25,11 +25,8 @@ new Vue({
       //pasamos el mensaje y generador que vienen siendo una cadena de texto a arrays
       //para poder hacer las operaciones pertinentes
       let rem = [...mensaje]
-      let div = Array.from(generador);
-      console.log("Antes")
-      console.log(rem)
-      console.log(div)
-      console.log(this.mensaje)
+      let div = [...generador]
+      
       
       this.current = 0;
       
@@ -75,16 +72,11 @@ new Vue({
       for (let i = 0; i < rem.length; i++) {
         string += rem[i];
       }
-      console.log("Despues")
+      
       tam=string.length-div.length
       string=string.substr(tam, div.length)
       //y por ultimo retornamos el valor crc
-      console.log(div)
-      console.log(this.mensaje)
-      console.log(rem.length)
-      console.log(current)
-      console.log(div.length)
-      console.log(string)
+      
       return string;
     },
     Main() {
