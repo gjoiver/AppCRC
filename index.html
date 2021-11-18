@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>CRC Calculadora</title>
+      </head>
+      
+      <body>
+
+        <header>
+          
+        </header>
+        <div id="app">
+          <div class="input_datas">
+          <div class="input__datas--container">
+            <h1>Calcular CRC</h1>
+            <h2>Ingrese los datos</h2>
+            <div class="input__container--form">
+              <input v-model="mensaje" class="input" type="text" placeholder="Mensaje"></input>
+              <input v-model="generador" class="input" type="text" placeholder="Generador"></input>
+              <button v-on:click="Main" class="button">Calcular</button>
+              <input v-model="crc" class="input" type="text" placeholder="CRC"></input>
+              <input v-model="tx" class="input" type="text" placeholder="TX"></input>
+              <button v-on:click="enviar" class="button">Enviar</button>
+            </div>
+            <div class="modal" v-if="showModal">
+              <div class="modal__container">
+              <h2>Receptor</h2>
+             <h3>{{confirmacionDato}}</h3>
+             <input v-model="crcReceptor" class="input" type="text" placeholder="CRC"></input>
+             <input v-model="txReceptor" class="input" type="text" placeholder="TX"></input>
+             <button @click="showModal = false" class="button">Cerrar</button>
+              </div>
+             
+            </div>
+
+            
+          </div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+        <script src="index.js"></script>
+      </body>
+      
+</html>
